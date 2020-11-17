@@ -6,30 +6,45 @@ public class Main {
 //        demoOne();
 //        demoTwo();
 
-          demoThree();
+        demoThree();
     }
 
     private static void demoThree() {
 
-        String firstName = "john";
-        String lastName = "smith";
+        String firstName = "Valeria";
+        String lastName = "Paz";
+        int iFirst = 0, iLast = 0;
+
         char[] letterArray = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
                 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
-        String[] pinArray = {"1","2","3","4","5","6","7","8","9","10","11",
-                "12","13","14","15","16","17","18","19","20","21","22","23","24","25","26"};
 
-        System.out.printf("account number is: %c%c - %s -", firstName.charAt(0), lastName.charAt(0), (firstName.length() + lastName.length()));
-
-        for (int i = 0; i < firstName.length(); i++) {
-            for (int j = 0; j < pinArray.length; j++) {
-                if (firstName.charAt(i) == letterArray[j]) {
-                    System.out.print(pinArray[j]);
-                    break;
-                }
+        System.out.println();
+        for (int i = 0; i < letterArray.length; i++) {
+            if (Character.toLowerCase(firstName.charAt(0)) == letterArray[i]) {
+                iFirst = i + 1;
             }
+            if (Character.toLowerCase(lastName.charAt(0)) == letterArray[i]) {
+                iLast = i + 1;
+            }
+
         }
 
+        System.out.printf("account number is: %c%c - %s - %02d - %02d", firstName.charAt(0), lastName.charAt(0), (firstName.length() + lastName.length()),
+                iFirst, iLast);
+
     }
+
+//        for (int i = 0; i < firstName.charAt(0); i++) {
+//            for (int j = 0; j < lastName.charAt(0); j++) {
+//                if (firstName.charAt(0) == letterArray[j]) {
+//                    System.out.println(pinArray[j]);
+//                    break;
+//                }
+//                }
+//            }
+//        }
+
+
     public static void demoTwo() {
 
         String s1 = "Hello there";
@@ -50,11 +65,11 @@ public class Main {
             System.out.printf("%c", s1.charAt(count));
         }
 
-        s1.getChars(0,5,charArray,0);
+        s1.getChars(0, 5, charArray, 0);
 
         System.out.printf("%nThe character array is: ");
 
-        for(char character: charArray) {
+        for (char character : charArray) {
             System.out.print(character);
         }
 
